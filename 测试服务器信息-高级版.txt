@@ -1,0 +1,12 @@
+[AMH] Congratulations, AMH 5.3 install completed.
+AMH Management: 
+http://139.129.201.254:8888
+https://139.129.201.254:9999
+AMH User: admin
+AMH Password: 453d920235d8 
+MySQL User: root
+MySQL Password: 453d920235d8 
+FTP£º
+http://139.129.201.254:8888/amftp-2.5/index.php?ftp_user=jsads&amh_token=rjqyknlw
+USER£ºjsads
+PASS£ºynR2nA71waEx
