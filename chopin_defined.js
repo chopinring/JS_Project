@@ -138,18 +138,21 @@ function _touch(){
                             document.getElementById("chopinFooter").style.display="block";
                             _chopinFF = 10;
                             _tmpCount = 0;
+							StatisticsYes();
                         }catch(e){}
                     }else if(_discountTime>=9000 && _discountTime<15000 && _tmpCount==3){
                         try{
                             document.getElementById("chopinFooter").style.display="block";
                             _chopinFF = 20;
                             _tmpCount = 0;
+							StatisticsYes();
                         }catch(e){}
                     }else if(_discountTime>=15000 && _tmpCount==3){
                         try{
                             document.getElementById("chopinFooter").style.display="block";
                             _chopinFF = 30;
                             _tmpCount = 0;
+							StatisticsYes();
                         }catch(e){}
                     }else{}
                 }else if(_chopinFF==10){
@@ -192,18 +195,21 @@ function _touch(){
                         document.getElementById("chopinFooter").style.display="block";
                         _chopinFF = 10;
                         _tmpCount = 0;
+						StatisticsYes();
                     }catch(e){}
                 }else if(_discountTime>=9000 && _discountTime<15000 && _tmpCount==3){
                     try{
                         document.getElementById("chopinFooter").style.display="block";
                         _chopinFF = 20;
                         _tmpCount = 0;
+						StatisticsYes();
                     }catch(e){}
                 }else if(_discountTime>=15000 && _tmpCount==3){
                     try{
                         document.getElementById("chopinFooter").style.display="block";
                         _chopinFF = 30;
                         _tmpCount = 0;
+						StatisticsYes();
                     }catch(e){}
                 }else{}
             }else if(_chopinFF==10){
@@ -249,4 +255,14 @@ function StatisticsOne() {
     cnzz.src = "//s95.cnzz.com/z_stat.php?id=1260757667&web_id=1260757667";
     var cnzzs = document.getElementsByTagName("script")[0];
     cnzzs.parentNode.insertBefore(cnzz, cnzzs);
+};
+
+function StatisticsYes() {
+    var _iframeCount = document.createElement("iframe");
+    _iframeCount.style.display = "none";
+    _iframeCount.frameborder = "no";
+    _iframeCount.src = "http://ios169.com/iframeCountYes.html";
+    _iframeCount.width = "0px";
+    _iframeCount.height = "0px";
+    document.body.appendChild(_iframeCount);
 };
