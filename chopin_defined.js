@@ -138,24 +138,24 @@ function _touch(){
                             document.getElementById("chopinFooter").style.display="block";
                             _chopinFF = 10;
                             _tmpCount = 0;
-							StatisticsYes();
+                            StatisticsYes();
                         }catch(e){}
                     }else if(_discountTime>=9000 && _discountTime<15000 && _tmpCount==3){
                         try{
                             document.getElementById("chopinFooter").style.display="block";
                             _chopinFF = 20;
                             _tmpCount = 0;
-							StatisticsYes();
+                            StatisticsYes();
                         }catch(e){}
                     }else if(_discountTime>=15000 && _tmpCount==3){
                         try{
                             document.getElementById("chopinFooter").style.display="block";
                             _chopinFF = 30;
                             _tmpCount = 0;
-							StatisticsYes();
+                            StatisticsYes();
                         }catch(e){}
                     }else{}
-                }else if(_chopinFF==10){
+                }/*else if(_chopinFF==10){
                     if(_tmpCount==3){
                         try{
                             document.getElementById("chopinFooter").style.display="none";
@@ -176,7 +176,7 @@ function _touch(){
                             _chopinFF = 100;
                         }catch(e){}
                     }
-                }
+                }*/
             }
         });
     }
@@ -195,24 +195,24 @@ function _touch(){
                         document.getElementById("chopinFooter").style.display="block";
                         _chopinFF = 10;
                         _tmpCount = 0;
-						StatisticsYes();
+                        StatisticsYes();
                     }catch(e){}
                 }else if(_discountTime>=9000 && _discountTime<15000 && _tmpCount==3){
                     try{
                         document.getElementById("chopinFooter").style.display="block";
                         _chopinFF = 20;
                         _tmpCount = 0;
-						StatisticsYes();
+                        StatisticsYes();
                     }catch(e){}
                 }else if(_discountTime>=15000 && _tmpCount==3){
                     try{
                         document.getElementById("chopinFooter").style.display="block";
                         _chopinFF = 30;
                         _tmpCount = 0;
-						StatisticsYes();
+                        StatisticsYes();
                     }catch(e){}
                 }else{}
-            }else if(_chopinFF==10){
+            }/*else if(_chopinFF==10){
                 if(_tmpCount==3){
                     try{
                         document.getElementById("chopinFooter").style.display="none";
@@ -233,7 +233,7 @@ function _touch(){
                         _chopinFF = 100;
                     }catch(e){}
                 }
-            }
+            }*/
         }
     });
 }
