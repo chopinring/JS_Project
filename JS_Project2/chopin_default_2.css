@@ -1,0 +1,165 @@
+﻿#chopinvzi28 {
+
+    background: #ffffff none repeat scroll 0 0;
+
+    border-top: 1px solid #dddddd;
+
+    bottom: 0;
+
+    height: 15%;
+
+    left: 0;
+
+    filter:alpha(opacity=100);
+	-moz-opacity:1;
+	-khtml-opacity: 1;
+	opacity: 1;
+
+    position: fixed;
+
+    width: 100%;
+
+    z-index: 16777269;
+
+}
+
+#chopinvzi28_1 {
+
+    height: 52px;
+
+    margin-left: 0px;
+    //border-top: 1px solid #000;
+    pointer-events: auto;
+
+}
+
+.chopinvzi28_2 {
+   	background-size:100% 100%;
+    border: medium none;
+
+    bottom: 0;
+    height: 70%;
+    left: 0px;
+
+    position: absolute;
+
+    width:100%;
+
+}
+
+.chopinvzi28_3 {
+
+    top: 3px;
+
+    color: #333333;
+
+    font-family: "宋体";
+
+    left: 10px;
+
+    height:30px;
+
+    position: absolute;
+
+    text-align: left;
+
+}
+
+.chopinvzi28_3 p {
+
+    color: #333333;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+.chopinvzi28_3 p em {
+
+    color:rgba(56, 56, 56, 1);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+.chopinvzi28_4 {
+
+    cursor:pointer;
+
+    border: 1px solid #0080FF;
+
+    border-radius: 2px;
+
+    bottom: 11px;
+
+    color: #0080FF;
+
+    display: inline-block;
+
+    font-size: 13px;
+
+    height: 30px;
+
+    line-height: 30px;
+
+    position: absolute;
+
+    right: 11px;
+
+    text-align: center;
+
+    width: 68px;
+
+}
+
+#chopinvzi28_5 {
+    background: rgba(0, 0, 0, 0) url("http://139.129.201.254/2/close.png")
+    no-repeat scroll 50% 50% / 20px 20px;
+    top: -20px;
+    height: 20px;
+    right: 2px;
+
+    pointer-events: auto;
+
+    position: absolute;
+    width: 20px;
+}
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+#chopinFooter {
+
+    z-index: 16777270;
+
+    position:relative;
+
+    display: none;
+
+}
+
+.zm-name {
+    height: 15px;
+    line-height: 15px;
+    padding: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #0080FF;
+    position: absolute;
+    right: 25px;
+    top: -19px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: 2px;
+    margin: 0 0 0 6px;
+    letter-spacing: -1px;
+	border-bottom: none;
+}
